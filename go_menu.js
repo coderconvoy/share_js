@@ -1,3 +1,23 @@
+//makeDropdown takes a UL element, and turns all child li-uls into hidden creatures, and assigns the buttons above them with an Open method.
+function makeDropdown(ul,isChild){
+    if( isChild){
+        ul.style.display = "none";
+    }
+
+    function openChildMaker(child){
+        return function(){
+            child.style.display = "inline";
+        }
+    }
+
+    for (var i = 0; i < ul.children.length; i++){
+        var li = ul.children[i];
+        if (li.children.length > 1 ){
+            makeDropdown(li.children[1],true)
+            li.children[0].onclick = openChildMaker(li.children[1]);
+        }
+    }
+}
 
 
 
