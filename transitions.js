@@ -16,7 +16,6 @@ function beginSlowSwitches(ob,delay,fadeTime){
     var cTime = 0;
 
     var fade = function(t){
-        console.log("Fade");
         if (sTime === undefined ){
             sTime = t;
         }
