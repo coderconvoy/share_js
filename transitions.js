@@ -16,7 +16,7 @@ function beginSlowSwitches(ob,delay,fadeTime){
     var cTime = 0;
 
     var fade = function(t){
-        if (sTime === undefined ){
+        if (sTime === -1 ){
             sTime = t;
         }
         if (t - sTime >= fadeTime){
@@ -36,6 +36,7 @@ function beginSlowSwitches(ob,delay,fadeTime){
         cTime = 0;
         
         if (sTime !== undefined ) return;
+        sTime = -1;
         
         pFrom = ob.children[count];
         count ++;
